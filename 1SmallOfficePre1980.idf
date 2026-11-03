@@ -76,17 +76,17 @@ Timestep,
 
 ConvergenceLimits,
     2,                       !- Minimum System Timestep {minutes}
-    25;                      !- Maximum HVAC Iterations
+    100;                     !- Maximum HVAC Iterations
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
 
 Site:Location,
-    OTTAWA-INTL-ONT,         !- Name
-    45.32,                   !- Latitude {deg}
-    -75.67,                  !- Longitude {deg}
+    Toronto.City-Univ.of.Toronto,  !- Name
+    43.6658,                 !- Latitude {deg}
+    -79.3953,                !- Longitude {deg}
     -5,                      !- Time Zone {hr}
-    114;                     !- Elevation {m}
+    112.5;                   !- Elevation {m}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SIZINGPERIOD:DESIGNDAY ===========

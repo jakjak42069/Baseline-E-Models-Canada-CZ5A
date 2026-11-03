@@ -20,7 +20,7 @@ SimulationControl,
     Yes,                     !- Run Simulation for Sizing Periods
     Yes,                     !- Run Simulation for Weather File Run Periods
     Yes,                     !- Do HVAC Sizing Simulation for Sizing Periods
-    30;                      !- Maximum Number of HVAC Sizing Simulation Passes
+    100;                     !- Maximum Number of HVAC Sizing Simulation Passes
 
 
 !-   ===========  ALL OBJECTS IN CLASS: BUILDING ===========
@@ -111,11 +111,11 @@ ConvergenceLimits,
 !-   ===========  ALL OBJECTS IN CLASS: SITE:LOCATION ===========
 
 Site:Location,
-    OTTAWA-INTL-ONT,         !- Name
-    45.32,                   !- Latitude {deg}
-    -75.67,                  !- Longitude {deg}
+    Toronto.City-Univ.of.Toronto,  !- Name
+    43.6658,                 !- Latitude {deg}
+    -79.3953,                !- Longitude {deg}
     -5,                      !- Time Zone {hr}
-    114;                     !- Elevation {m}
+    112.5;                   !- Elevation {m}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SIZINGPERIOD:DESIGNDAY ===========
@@ -187,14 +187,14 @@ RunPeriod,
     Run Period 1,            !- Name
     1,                       !- Begin Month
     1,                       !- Begin Day of Month
-    2019,                    !- Begin Year
+    2017,                    !- Begin Year
     12,                      !- End Month
     31,                      !- End Day of Month
-    2019,                    !- End Year
-    Tuesday,                 !- Day of Week for Start Day
-    No,                      !- Use Weather File Holidays and Special Days
-    No,                      !- Use Weather File Daylight Saving Period
-    No,                      !- Apply Weekend Holiday Rule
+    2017,                    !- End Year
+    Sunday,                  !- Day of Week for Start Day
+    Yes,                     !- Use Weather File Holidays and Special Days
+    Yes,                     !- Use Weather File Daylight Saving Period
+    Yes,                     !- Apply Weekend Holiday Rule
     Yes,                     !- Use Weather File Rain Indicators
     Yes;                     !- Use Weather File Snow Indicators
 
@@ -267,6 +267,23 @@ RunPeriodControl:SpecialDays,
 RunPeriodControl:DaylightSavingTime,
     1/1,                     !- Start Date
     12/31;                   !- End Date
+
+
+!-   ===========  ALL OBJECTS IN CLASS: SITE:GROUNDTEMPERATURE:BUILDINGSURFACE ===========
+
+Site:GroundTemperature:BuildingSurface,
+    18,                      !- January Ground Temperature {C}
+    18,                      !- February Ground Temperature {C}
+    18,                      !- March Ground Temperature {C}
+    18,                      !- April Ground Temperature {C}
+    18,                      !- May Ground Temperature {C}
+    18,                      !- June Ground Temperature {C}
+    18,                      !- July Ground Temperature {C}
+    18,                      !- August Ground Temperature {C}
+    18,                      !- September Ground Temperature {C}
+    18,                      !- October Ground Temperature {C}
+    18,                      !- November Ground Temperature {C}
+    18;                      !- December Ground Temperature {C}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SCHEDULETYPELIMITS ===========
@@ -5780,7 +5797,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5795,7 +5812,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5810,7 +5827,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5825,7 +5842,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5840,7 +5857,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5855,7 +5872,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5870,7 +5887,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5885,7 +5902,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5900,7 +5917,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5915,7 +5932,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5930,7 +5947,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5945,7 +5962,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5960,7 +5977,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5975,7 +5992,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -5990,7 +6007,7 @@ Lights,
     ,                        !- Lighting Level {W}
     16.89,                   !- Watts per Floor Area {W/m2}
     ,                        !- Watts per Person {W/person}
-    0.4,                     !- Return Air Fraction
+    0,                       !- Return Air Fraction
     0.4,                     !- Fraction Radiant
     0.2,                     !- Fraction Visible
     1,                       !- Fraction Replaceable
@@ -6646,7 +6663,7 @@ Sizing:Parameters,
 Sizing:Zone,
     Core_bottom,             !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6682,7 +6699,7 @@ Sizing:Zone,
 Sizing:Zone,
     Core_mid,                !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6718,7 +6735,7 @@ Sizing:Zone,
 Sizing:Zone,
     Core_top,                !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6754,7 +6771,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_bot_ZN_1,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6790,7 +6807,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_bot_ZN_2,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6826,7 +6843,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_bot_ZN_3,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6862,7 +6879,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_bot_ZN_4,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6898,7 +6915,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_mid_ZN_1,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6934,7 +6951,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_mid_ZN_2,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -6970,7 +6987,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_mid_ZN_3,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -7006,7 +7023,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_mid_ZN_4,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -7042,7 +7059,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_top_ZN_1,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -7078,7 +7095,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_top_ZN_2,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -7114,7 +7131,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_top_ZN_3,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -7150,7 +7167,7 @@ Sizing:Zone,
 Sizing:Zone,
     Perimeter_top_ZN_4,      !- Zone or ZoneList Name
     SupplyAirTemperature,    !- Zone Cooling Design Supply Air Temperature Input Method
-    12.8,                    !- Zone Cooling Design Supply Air Temperature {C}
+    11.1,                    !- Zone Cooling Design Supply Air Temperature {C}
     11.11,                   !- Zone Cooling Design Supply Air Temperature Difference {deltaC}
     SupplyAirTemperature,    !- Zone Heating Design Supply Air Temperature Input Method
     40,                      !- Zone Heating Design Supply Air Temperature {C}
@@ -7189,11 +7206,11 @@ Sizing:Zone,
 Sizing:Plant,
     HW Loop,                 !- Plant or Condenser Loop Name
     Heating,                 !- Loop Type
-    85,                      !- Design Loop Exit Temperature {C}
+    90,                      !- Design Loop Exit Temperature {C}
     11,                      !- Loop Design Temperature Difference {deltaC}
-    NonCoincident,           !- Sizing Option
+    Coincident,              !- Sizing Option
     1,                       !- Zone Timesteps in Averaging Window
-    None;                    !- Coincident Sizing Factor Mode
+    GlobalHeatingSizingFactor;  !- Coincident Sizing Factor Mode
 
 
 !-   ===========  ALL OBJECTS IN CLASS: ZONECONTROL:THERMOSTAT ===========
@@ -8604,7 +8621,7 @@ Boiler:HotWater,
     LeavingSetpointModulated,!- Boiler Flow Mode
     0,                       !- On Cycle Parasitic Electric Load {W}
     1,                       !- Sizing Factor
-    General,                 !- End-Use Subcategory
+    Heating,                 !- End-Use Subcategory
     0;                       !- Off Cycle Parasitic Fuel Load {W}
 
 
@@ -8616,8 +8633,8 @@ PlantLoop,
     ,                        !- User Defined Fluid Type
     HW Loop Operation Schemes,  !- Plant Equipment Operation Scheme Name
     Node 20,                 !- Loop Temperature Setpoint Node Name
-    95,                      !- Maximum Loop Temperature {C}
-    75,                      !- Minimum Loop Temperature {C}
+    100,                     !- Maximum Loop Temperature {C}
+    0,                       !- Minimum Loop Temperature {C}
     Autosize,                !- Maximum Loop Flow Rate {m3/s}
     0,                       !- Minimum Loop Flow Rate {m3/s}
     Autocalculate,           !- Plant Loop Volume {m3}
@@ -8629,7 +8646,7 @@ PlantLoop,
     Node 23,                 !- Demand Side Outlet Node Name
     HW Loop Demand Branches, !- Demand Side Branch List Name
     HW Loop Demand Connector List,  !- Demand Side Connector List Name
-    Optimal,                 !- Load Distribution Scheme
+    SequentialUniformPLR,    !- Load Distribution Scheme
     ,                        !- Availability Manager List Name
     SingleSetpoint,          !- Plant Loop Demand Calculation Scheme
     None;                    !- Common Pipe Simulation
@@ -8764,216 +8781,6 @@ Curve:Biquadratic,
     50.3;                    !- Maximum Value of y
 
 
-!-   ===========  ALL OBJECTS IN CLASS: LIFECYCLECOST:PARAMETERS ===========
-
-LifeCycleCost:Parameters,
-    Life Cycle Cost Parameters,  !- Name
-    EndOfYear,               !- Discounting Convention
-    ConstantDollar,          !- Inflation Approach
-    0.03,                    !- Real Discount Rate
-    ,                        !- Nominal Discount Rate
-    ,                        !- Inflation
-    ,                        !- Base Date Month
-    2011,                    !- Base Date Year
-    ,                        !- Service Date Month
-    2011,                    !- Service Date Year
-    25,                      !- Length of Study Period in Years
-    ,                        !- Tax rate
-    None;                    !- Depreciation Method
-
-
-!-   ===========  ALL OBJECTS IN CLASS: LIFECYCLECOST:NONRECURRINGCOST ===========
-
-LifeCycleCost:NonrecurringCost,
-    Default Cost,            !- Name
-    Construction,            !- Category
-    0,                       !- Cost
-    ServicePeriod;           !- Start of Costs
-
-
-!-   ===========  ALL OBJECTS IN CLASS: LIFECYCLECOST:USEPRICEESCALATION ===========
-
-LifeCycleCost:UsePriceEscalation,
-    U.S. Avg  Commercial-Electricity,  !- LCC Price Escalation Name
-    Electricity,             !- Resource
-    2011,                    !- Escalation Start Year
-    January,                 !- Escalation Start Month
-    0.9838,                  !- Year 1 Escalation
-    0.9730,                  !- Year 2 Escalation
-    0.9632,                  !- Year 3 Escalation
-    0.9611,                  !- Year 4 Escalation
-    0.9571,                  !- Year 5 Escalation
-    0.9553,                  !- Year 6 Escalation
-    0.9539,                  !- Year 7 Escalation
-    0.9521,                  !- Year 8 Escalation
-    0.9546,                  !- Year 9 Escalation
-    0.9550,                  !- N11
-    0.9553,                  !- N12
-    0.9564,                  !- N13
-    0.9575,                  !- N14
-    0.9596,                  !- N15
-    0.9618,                  !- N16
-    0.9614,                  !- N17
-    0.9618,                  !- N18
-    0.9618,                  !- N19
-    0.9593,                  !- N20
-    0.9589,                  !- N21
-    0.9607,                  !- N22
-    0.9625,                  !- N23
-    0.9650,                  !- N24
-    0.9708,                  !- N25
-    0.9751,                  !- N26
-    0.9762,                  !- N27
-    0.9766,                  !- N28
-    0.9766,                  !- N29
-    0.9769,                  !- N30
-    0.9773;                  !- N31
-
-LifeCycleCost:UsePriceEscalation,
-    U.S. Avg  Commercial-Distillate Oil,  !- LCC Price Escalation Name
-    FuelOilNo1,              !- Resource
-    2011,                    !- Escalation Start Year
-    January,                 !- Escalation Start Month
-    0.9714,                  !- Year 1 Escalation
-    0.9730,                  !- Year 2 Escalation
-    0.9942,                  !- Year 3 Escalation
-    1.0164,                  !- Year 4 Escalation
-    1.0541,                  !- Year 5 Escalation
-    1.0928,                  !- Year 6 Escalation
-    1.1267,                  !- Year 7 Escalation
-    1.1580,                  !- Year 8 Escalation
-    1.1792,                  !- Year 9 Escalation
-    1.1967,                  !- N11
-    1.2200,                  !- N12
-    1.2333,                  !- N13
-    1.2566,                  !- N14
-    1.2709,                  !- N15
-    1.2826,                  !- N16
-    1.2985,                  !- N17
-    1.3102,                  !- N18
-    1.3250,                  !- N19
-    1.3261,                  !- N20
-    1.3282,                  !- N21
-    1.3324,                  !- N22
-    1.3356,                  !- N23
-    1.3431,                  !- N24
-    1.3510,                  !- N25
-    1.3568,                  !- N26
-    1.3606,                  !- N27
-    1.3637,                  !- N28
-    1.3674,                  !- N29
-    1.3706,                  !- N30
-    1.3743;                  !- N31
-
-LifeCycleCost:UsePriceEscalation,
-    U.S. Avg  Commercial-Residual Oil,  !- LCC Price Escalation Name
-    FuelOilNo2,              !- Resource
-    2011,                    !- Escalation Start Year
-    January,                 !- Escalation Start Month
-    0.8469,                  !- Year 1 Escalation
-    0.8257,                  !- Year 2 Escalation
-    0.8681,                  !- Year 3 Escalation
-    0.8988,                  !- Year 4 Escalation
-    0.9289,                  !- Year 5 Escalation
-    0.9604,                  !- Year 6 Escalation
-    0.9897,                  !- Year 7 Escalation
-    1.0075,                  !- Year 8 Escalation
-    1.0314,                  !- Year 9 Escalation
-    1.0554,                  !- N11
-    1.0861,                  !- N12
-    1.1278,                  !- N13
-    1.1497,                  !- N14
-    1.1620,                  !- N15
-    1.1743,                  !- N16
-    1.1852,                  !- N17
-    1.1948,                  !- N18
-    1.2037,                  !- N19
-    1.2071,                  !- N20
-    1.2119,                  !- N21
-    1.2139,                  !- N22
-    1.2194,                  !- N23
-    1.2276,                  !- N24
-    1.2365,                  !- N25
-    1.2420,                  !- N26
-    1.2461,                  !- N27
-    1.2509,                  !- N28
-    1.2550,                  !- N29
-    1.2591,                  !- N30
-    1.2638;                  !- N31
-
-LifeCycleCost:UsePriceEscalation,
-    U.S. Avg  Commercial-Natural gas,  !- LCC Price Escalation Name
-    NaturalGas,              !- Resource
-    2011,                    !- Escalation Start Year
-    January,                 !- Escalation Start Month
-    0.9823,                  !- Year 1 Escalation
-    0.9557,                  !- Year 2 Escalation
-    0.9279,                  !- Year 3 Escalation
-    0.9257,                  !- Year 4 Escalation
-    0.9346,                  !- Year 5 Escalation
-    0.9412,                  !- Year 6 Escalation
-    0.9512,                  !- Year 7 Escalation
-    0.9645,                  !- Year 8 Escalation
-    0.9856,                  !- Year 9 Escalation
-    1.0067,                  !- N11
-    1.0222,                  !- N12
-    1.0410,                  !- N13
-    1.0610,                  !- N14
-    1.0787,                  !- N15
-    1.0942,                  !- N16
-    1.1098,                  !- N17
-    1.1220,                  !- N18
-    1.1308,                  !- N19
-    1.1386,                  !- N20
-    1.1486,                  !- N21
-    1.1619,                  !- N22
-    1.1763,                  !- N23
-    1.1918,                  !- N24
-    1.2118,                  !- N25
-    1.2284,                  !- N26
-    1.2439,                  !- N27
-    1.2605,                  !- N28
-    1.2772,                  !- N29
-    1.2938,                  !- N30
-    1.3115;                  !- N31
-
-LifeCycleCost:UsePriceEscalation,
-    U.S. Avg  Commercial-Coal,  !- LCC Price Escalation Name
-    Coal,                    !- Resource
-    2011,                    !- Escalation Start Year
-    January,                 !- Escalation Start Month
-    0.9970,                  !- Year 1 Escalation
-    1.0089,                  !- Year 2 Escalation
-    1.0089,                  !- Year 3 Escalation
-    0.9941,                  !- Year 4 Escalation
-    0.9941,                  !- Year 5 Escalation
-    1.0000,                  !- Year 6 Escalation
-    1.0030,                  !- Year 7 Escalation
-    1.0059,                  !- Year 8 Escalation
-    1.0089,                  !- Year 9 Escalation
-    1.0119,                  !- N11
-    1.0148,                  !- N12
-    1.0178,                  !- N13
-    1.0208,                  !- N14
-    1.0267,                  !- N15
-    1.0297,                  !- N16
-    1.0356,                  !- N17
-    1.0415,                  !- N18
-    1.0534,                  !- N19
-    1.0564,                  !- N20
-    1.0593,                  !- N21
-    1.0653,                  !- N22
-    1.0712,                  !- N23
-    1.0742,                  !- N24
-    1.0801,                  !- N25
-    1.0831,                  !- N26
-    1.0831,                  !- N27
-    1.0861,                  !- N28
-    1.0890,                  !- N29
-    1.0920,                  !- N30
-    1.0950;                  !- N31
-
-
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:VARIABLEDICTIONARY ===========
 
 Output:VariableDictionary,
@@ -8984,7 +8791,7 @@ Output:VariableDictionary,
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:TABLE:SUMMARYREPORTS ===========
 
 Output:Table:SummaryReports,
-    AllSummary;              !- Report 1 Name
+    AllSummaryAndMonthly;    !- Report 1 Name
 
 
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUTCONTROL:TABLE:STYLE ===========
@@ -9004,63 +8811,11 @@ OutputControl:ReportingTolerances,
 !-   ===========  ALL OBJECTS IN CLASS: OUTPUT:METER ===========
 
 Output:Meter,
-    Cooling:Electricity,     !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    ExteriorEquipment:Electricity,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    ExteriorLights:Electricity,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    Fans:Electricity,        !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    Heating:Electricity,     !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
     Heating:NaturalGas,      !- Key Name
     hourly;                  !- Reporting Frequency
 
 Output:Meter,
-    HeatRejection:Electricity,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    Humidifier:Electricity,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    InteriorEquipment:Electricity,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    InteriorEquipment:NaturalGas,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    InteriorLights:Electricity,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
     Pumps:Electricity,       !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    Refrigeration:Electricity,  !- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    WaterSystems:Electricity,!- Key Name
-    hourly;                  !- Reporting Frequency
-
-Output:Meter,
-    WaterSystems:NaturalGas, !- Key Name
     hourly;                  !- Reporting Frequency
 
 Output:Meter,
@@ -9086,4 +8841,17 @@ Output:JSON,
 Output:SQLite,
     SimpleAndTabular,        !- Option Type
     UseOutputControlTableStyle;  !- Unit Conversion for Tabular Data
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:DIAGNOSTICS ===========
+
+Output:Diagnostics,
+    DisplayExtraWarnings;    !- Key 1
+
+
+!-   ===========  ALL OBJECTS IN CLASS: OUTPUT:DEBUGGINGDATA ===========
+
+Output:DebuggingData,
+    Yes,                     !- Report Debugging Data
+    Yes;                     !- Report During Warmup
 

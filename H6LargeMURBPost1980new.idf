@@ -1427,14 +1427,14 @@ Schedule:Compact,
     Through: 12/31,          !- Field 1
     For: Weekdays,           !- Field 2
     Until: 8:00,             !- Field 3
-    1.0,                     !- Field 4
+     .15,                    !- Field 4
     Until: 17:00,            !- Field 5
-    0.25,                    !- Field 6
+     .75,                    !- Field 6
     Until: 24:00,            !- Field 7
-    1.0,                     !- Field 8
+     .15,                    !- Field 8
     For AllOtherDays,        !- Field 9
     Until: 24:00,            !- Field 10
-    1.0;                     !- Field 11
+     .15;                    !- Field 11
 
 Schedule:Compact,
     Office_Operation,        !- Name
@@ -1474,6 +1474,21 @@ Schedule:Compact,
     For: AllDays,            !- Field 2
     Until: 24:00,            !- Field 3
     60.0;                    !- Field 4
+
+Schedule:Compact,
+    APT_INFIL_SCH,           !- Name
+    Fraction,                !- Schedule Type Limits Name
+    Through: 12/31,          !- Field 1
+    For: Weekdays,           !- Field 2
+    Until: 8:00,             !- Field 3
+     .75,                    !- Field 4
+    Until: 17:00,            !- Field 5
+     .15,                    !- Field 6
+    Until: 24:00,            !- Field 7
+     .75,                    !- Field 8
+    For AllOtherDays,        !- Field 9
+    Until: 24:00,            !- Field 10
+     .15;                    !- Field 11
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SCHEDULE:CONSTANT ===========
@@ -1679,7 +1694,7 @@ Material:NoMass,
 
 WindowMaterial:SimpleGlazingSystem,
     Res Operable Assembly Window,  !- Name
-    3.35002,                 !- U-Factor {W/m2-K}
+    3.39,                    !- U-Factor {W/m2-K}
     0.39;                    !- Solar Heat Gain Coefficient
 
 
@@ -9379,240 +9394,240 @@ ElectricEquipment,
 ZoneInfiltration:DesignFlowRate,
     G Corridor_Infiltration, !- Name
     G Corridor Space,        !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     G N1 Apartment_Infiltration,  !- Name
     G N1 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     G N2 Apartment_Infiltration,  !- Name
     G N2 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     G NE Apartment_Infiltration,  !- Name
     G NE Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     G NW Apartment_Infiltration,  !- Name
     G NW Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     G S1 Apartment_Infiltration,  !- Name
     G S1 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     G S2 Apartment_Infiltration,  !- Name
     G S2 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     G SW Apartment_Infiltration,  !- Name
     G SW Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M Corridor_Infiltration, !- Name
     M Corridor Space,        !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M N1 Apartment_Infiltration,  !- Name
     M N1 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M N2 Apartment_Infiltration,  !- Name
     M N2 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M NE Apartment_Infiltration,  !- Name
     M NE Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M NW Apartment_Infiltration,  !- Name
     M NW Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M S1 Apartment_Infiltration,  !- Name
     M S1 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M S2 Apartment_Infiltration,  !- Name
     M S2 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M SE Apartment_Infiltration,  !- Name
     M SE Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     M SW Apartment_Infiltration,  !- Name
     M SW Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     Office_Infiltration,     !- Name
@@ -9621,138 +9636,138 @@ ZoneInfiltration:DesignFlowRate,
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T Corridor_Infiltration, !- Name
     T Corridor Space,        !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T N1 Apartment_Infiltration,  !- Name
     T N1 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T N2 Apartment_Infiltration,  !- Name
     T N2 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T NE Apartment_Infiltration,  !- Name
     T NE Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T NW Apartment_Infiltration,  !- Name
     T NW Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T S1 Apartment_Infiltration,  !- Name
     T S1 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T S2 Apartment_Infiltration,  !- Name
     T S2 Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T SE Apartment_Infiltration,  !- Name
     T SE Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 ZoneInfiltration:DesignFlowRate,
     T SW Apartment_Infiltration,  !- Name
     T SW Apartment Space,    !- Zone or ZoneList or Space or SpaceList Name
-    INFIL_SCH,               !- Schedule Name
+    APT_INFIL_SCH,           !- Schedule Name
     Flow/ExteriorArea,       !- Design Flow Rate Calculation Method
     ,                        !- Design Flow Rate {m3/s}
     ,                        !- Flow Rate per Floor Area {m3/s-m2}
-    0.001133,                !- Flow Rate per Exterior Surface Area {m3/s-m2}
+    0.009,                   !- Flow Rate per Exterior Surface Area {m3/s-m2}
     ,                        !- Air Changes per Hour {1/hr}
-    1,                       !- Constant Term Coefficient
+    -.0466,                  !- Constant Term Coefficient
     0,                       !- Temperature Term Coefficient
-    0,                       !- Velocity Term Coefficient
-    0;                       !- Velocity Squared Term Coefficient
+    0.004,                   !- Velocity Term Coefficient
+    0.016;                   !- Velocity Squared Term Coefficient
 
 
 !-   ===========  ALL OBJECTS IN CLASS: EXTERIOR:LIGHTS ===========
@@ -9769,7 +9784,7 @@ Exterior:Lights,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G Corridor,      !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.01,                    !- Outdoor Air Flow per Zone {m3/s}
@@ -9777,7 +9792,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G N1 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9785,7 +9800,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G N2 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9793,7 +9808,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G NE Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9801,7 +9816,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G NW Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9809,7 +9824,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G S1 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9817,7 +9832,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G S2 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    AirChanges/Hour,         !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9825,7 +9840,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA G SW Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9833,7 +9848,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M Corridor,      !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.01,                    !- Outdoor Air Flow per Zone {m3/s}
@@ -9841,7 +9856,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M N1 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9849,7 +9864,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M N2 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9857,7 +9872,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M NE Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9865,7 +9880,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M NW Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9873,7 +9888,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M S1 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9881,7 +9896,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M S2 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9889,7 +9904,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M SE Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9897,7 +9912,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA M SW Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9905,7 +9920,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA Office,          !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0.01,                    !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.01,                    !- Outdoor Air Flow per Zone {m3/s}
@@ -9913,7 +9928,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T Corridor,      !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.01,                    !- Outdoor Air Flow per Zone {m3/s}
@@ -9921,7 +9936,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T N1 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9929,7 +9944,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T N2 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9937,7 +9952,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T NE Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9945,7 +9960,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T NW Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9953,7 +9968,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T S1 Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9969,7 +9984,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T SE Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -9977,7 +9992,7 @@ DesignSpecification:OutdoorAir,
 
 DesignSpecification:OutdoorAir,
     SZ DSOA T SW Apartment,  !- Name
-    Sum,                     !- Outdoor Air Method
+    Flow/Zone,               !- Outdoor Air Method
     0,                       !- Outdoor Air Flow per Person {m3/s-person}
     0,                       !- Outdoor Air Flow per Zone Floor Area {m3/s-m2}
     0.04248,                 !- Outdoor Air Flow per Zone {m3/s}
@@ -10156,7 +10171,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10192,7 +10207,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10228,7 +10243,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10264,7 +10279,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10300,7 +10315,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10336,7 +10351,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10372,7 +10387,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10408,7 +10423,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10444,7 +10459,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10480,7 +10495,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10516,7 +10531,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10552,7 +10567,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10588,7 +10603,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10624,7 +10639,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10660,7 +10675,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10696,7 +10711,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10732,7 +10747,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10768,7 +10783,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10804,7 +10819,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10840,7 +10855,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10876,7 +10891,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10912,7 +10927,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10948,7 +10963,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -10984,7 +10999,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -11020,7 +11035,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -11056,7 +11071,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
@@ -11092,7 +11107,7 @@ Sizing:Zone,
     0.1415762,               !- Heating Maximum Air Flow {m3/s}
     0.3,                     !- Heating Maximum Air Flow Fraction
     ,                        !- Design Specification Zone Air Distribution Object Name
-    No,                      !- Account for Dedicated Outdoor Air System
+    Yes,                     !- Account for Dedicated Outdoor Air System
     ,                        !- Dedicated Outdoor Air System Control Strategy
     ,                        !- Dedicated Outdoor Air Low Setpoint Temperature for Design {C}
     ,                        !- Dedicated Outdoor Air High Setpoint Temperature for Design {C}
